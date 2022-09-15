@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		@apply leading-snug;
+		font-family: "Montserrat";
+	}
+
+	button {
+		@apply font-semibold text-white rounded-xl bg-accent;
+	}
+	button:hover {
+		@apply bg-accent-cd;
+	}
+	.checkboxIcon{
+		@apply w-4 h-4 select-none hidden
+		ml-0.5;
+	}
+	.checkboxIcon_toggle:checked ~ .checkboxLabel .checkboxBackground{
+		@apply bg-blue-00a5e0;
+	}
+	.checkboxIcon_toggle:checked ~ .checkboxLabel .checkboxBackground .checkboxIcon{
+		@apply block;
+	}
+	.checkboxBackground{
+		@apply border border-gray-b3 w-7 h-7 block select-none 
+		flex justify-center
+		items-center
+		cursor-pointer
+		min-w-checkbox;
+	}
+
+	.padding-x {
+		@apply px-6 lg:px-16 xl:px-20;
+	}
+
+	.social-block img {
+		@apply w-6 h-6 lg:w-7 lg:h-7;
+	}
+
+	h2 {
+		@apply text-2xl font-semibold text-violet-dark md:text-3xl;
+	}
+
+	.header-nav a {
+		@apply w-full py-2 border-b-2;
+	}
+	.anywayHidden{
+		display:none !important;
+	}
+	/* .cardBody:hover .cardMain{
+		@apply hidden transition-all;
+		
+	}
+	.cardBody:hover .cardExtend{
+		@apply block transition-all;
+	} */
+
+
+	.RunningLine{
+		animation: RunLine 30s infinite linear forwards;
+	}
+	.RunningLineSecond {
+		animation: 30s ticker 15s infinite linear forwards;
+	  }
+	@keyframes RunLine {
+			0% {
+				transform: translate(100%, 0);
+			}
+			
+			50% {
+				transform: translate(0, 0);
+			}
+			
+			100% {
+				transform: translate(-100%, 0);
+			}
+		}
+}
